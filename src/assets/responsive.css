@@ -1,0 +1,126 @@
+/**
+ * Responsive Styles — AUTOSTAR Platform
+ * Requirements: 11.1, 11.2, 11.3, 11.4, 11.5
+ *
+ * - No horizontal scroll from 320px to 1280px
+ * - Content reorganization at Tailwind breakpoints
+ * - Hamburger menu below 768px (handled by Sakai layout)
+ * - Minimum 44x44px touch targets on interactive elements
+ * - Minimum 16px body text on mobile
+ */
+
+/* ===== Base font size ===== */
+html {
+    font-size: 16px;
+}
+
+/* ===== Prevent horizontal overflow on public site ===== */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+#app {
+    overflow-x: hidden;
+}
+
+/* ===== Mobile body text size (< 768px) ===== */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Ensure PrimeVue inputs don't zoom on iOS (font-size < 16px triggers zoom) */
+    input,
+    select,
+    textarea,
+    .p-inputtext,
+    .p-select,
+    .p-textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* ===== Touch target minimum 44x44px ===== */
+button,
+a,
+[role="button"],
+.p-button,
+.p-link,
+input[type="checkbox"],
+input[type="radio"],
+.p-checkbox,
+.p-radiobutton {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Allow icon-only buttons to stay compact but still meet touch target */
+.p-button-icon-only {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Form inputs touch target */
+.p-inputtext,
+.p-select,
+.p-datepicker-input,
+.p-inputnumber-input {
+    min-height: 44px;
+}
+
+/* ===== Login page responsive fixes ===== */
+@media (max-width: 639px) {
+    .layout-login-card {
+        padding: 2rem 1.5rem !important;
+        border-radius: 1.5rem !important;
+    }
+
+    .layout-login-wrapper {
+        border-radius: 1.75rem !important;
+        padding: 0.2rem !important;
+    }
+}
+
+/* ===== DataTable responsive wrapper ===== */
+.p-datatable-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ===== Dialog responsive (mobile fullscreen) ===== */
+@media (max-width: 639px) {
+    .p-dialog {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 0.5rem !important;
+    }
+}
+
+/* ===== Public site images prevent overflow ===== */
+img,
+video,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Card and content containers ===== */
+.card {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+/* ===== Tab panels on mobile ===== */
+@media (max-width: 639px) {
+    .p-tabview-nav {
+        flex-wrap: wrap;
+    }
+
+    .p-tabview-nav-link {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+}

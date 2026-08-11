@@ -9,7 +9,7 @@
         <div class="absolute inset-0 bg-black/40 z-10"></div>
         <!-- CONTENIDO -->
         <div class="relative z-20 mx-6 md:mx-20 mt-0 md:mt-6">
-            <h1 class="text-7xl font-bold text-white leading-tight">
+            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
                 <span class="block">AUTOSTAR</span>
                 <span>Escuela de manejo</span>
             </h1>

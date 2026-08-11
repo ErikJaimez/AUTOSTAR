@@ -1,13 +1,15 @@
 <script setup>
-import ContactDialog from '@/components/contac/ContacDialog.vue';
 import { ref } from 'vue';
 
+const WHATSAPP_NUMBER = '5215554713895';
 
-
-//const display = ref(false);
-const showDialog = ref(false)
 const goToFacebook = () => {
   window.open('https://www.facebook.com/escuelademanejoautoestar', '_blank')
+}
+
+function enviarWhatsAppGeneral() {
+    const mensaje = encodeURIComponent('¡Hola! Me interesa obtener información sobre los cursos de manejo en AUTOSTAR. ¿Podrían darme más detalles?');
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${mensaje}`, '_blank');
 }
 
 
@@ -78,8 +80,7 @@ function smoothScroll(id) {
   @click="goToFacebook"
 />
 
-            <Button label="WhatsApp" @click="showDialog = true" />
-                <ContactDialog v-model="showDialog" />
+            <Button label="WhatsApp" @click="enviarWhatsAppGeneral" />
                 <!-- <Dialog header="Déjalo en nuestras manos o llámanos" v-model:visible="display" :breakpoints="{ '960px': '75vw' }" :style="{ width: '40vw' }" :modal="true">                 
                     <div class="flex flex-col md:flex-row">
                         <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5">
